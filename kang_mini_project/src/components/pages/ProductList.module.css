@@ -1,0 +1,19 @@
+.list {
+  padding : 30px;
+}
+
+.list ul {
+  /* display : flex; */
+  margin: 0px;
+  padding: 0px;
+}
+
+.list ul li {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.list ul li img {
+  width: 200x;
+  height: 200px;
+}

@@ -1,0 +1,15 @@
+.header {
+  padding: 30px 100px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerIcon {
+  display: flex;
+}
+
+.headerIcon img {
+  padding-left: 25px;
+}
