@@ -6,21 +6,24 @@ import Cart from './components/pages/Cart';
 import LogIn from './components/pages/LogIn';
 import Main from './components/pages/Main';
 import ProductDetail from './components/pages/ProductDetail';
+import { RecoilRoot } from 'recoil';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/productdetail/:id" element={<ProductDetail />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/productdetail/:id" element={<ProductDetail />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </div>
+    </RecoilRoot>
   );
 }
 

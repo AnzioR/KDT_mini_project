@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import style from './ProductList.module.css';
+import ProductCard from '../ui/ProductCard';
 
 
 function ProductList () {
@@ -17,18 +17,13 @@ function ProductList () {
     })
   },[])
 
+
+  
   return (
     <div className={style.list}>
       <ul>
-        {productData && productData.map( product => (
-          <li key={product.id}>
-            <Link to={ `/productdetail/${product.id}`} >
-              <img src={product.thumbnail} alt="" />
-            </Link>
-            {product.name}
-            {product.price} 원
-            <button>장바구니 담기</button>
-          </li>
+        {productData && productData.map( (product, idx) => (
+          <ProductCard key={idx} product={product} />
         ))}
         
       </ul>
