@@ -5,14 +5,13 @@ function LogIn () {
   return (
     <div className={style.login}>
       <div>
-        <input type="text" placeholder="Id" />
+        <input type="text" placeholder="Email" />
       </div>
       <div>
         <input type="text" placeholder="Password" />
       </div>
       <div>
-      아이디찾기
-      비밀번호찾기
+      아이디, 비밀번호찾기
       </div>
       <div>
         <button>로그인</button>

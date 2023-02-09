@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import style from './ProductList.module.css';
 
 
@@ -21,9 +22,11 @@ function ProductList () {
       <ul>
         {productData && productData.map( product => (
           <li key={product.id}>
-            <img src={product.thumbnail} alt="" /><br />
-            {product.name}<br />
-            {product.price} 원<br />
+            <Link to={ `/productdetail/${product.id}`} >
+              <img src={product.thumbnail} alt="" />
+            </Link>
+            {product.name}
+            {product.price} 원
             <button>장바구니 담기</button>
           </li>
         ))}

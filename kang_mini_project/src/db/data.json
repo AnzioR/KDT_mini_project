@@ -125,6 +125,12 @@
       "name" : "안영진",
       "email" : "beat1103@gmail.com",
       "password" : "1234"
+    },
+    {
+      "id" : 2,
+      "name" : "김민호",
+      "email" : "minho001@gmail.com",
+      "password" : "4567"
     }
   ]
 }
