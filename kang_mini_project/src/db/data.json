@@ -143,21 +143,5 @@
       "password": "4567"
     }
   ],
-  "carts": [
-    {
-      "productId": 2,
-      "quantity": 1,
-      "id": 2
-    },
-    {
-      "productId": 1,
-      "quantity": 1,
-      "id": 3
-    },
-    {
-      "productId": 1,
-      "quantity": 1,
-      "id": 4
-    }
-  ]
+  "carts": []
 }

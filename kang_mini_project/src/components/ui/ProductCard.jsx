@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useRecoilState } from 'recoil';
 import { CartCountState } from '../state/CartCountState';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,9 @@ const ProductCard = ({product}) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         productId: product.id,
+        name: product.name,
+        thumbnail: product.thumbnail,
+        price: product.price,
         quantity: 1
       })
     })
