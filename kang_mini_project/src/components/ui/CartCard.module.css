@@ -1,0 +1,25 @@
+.cartcard {
+  display : flex;
+}
+
+.cartcard li {
+  list-style: none;
+  display : flex;
+}
+
+.cartInfo {
+  padding-left: 30px;
+  width : 300px
+}
+
+.cartcard img {
+  width : 200px;
+  height : 200px;
+  border-radius : 10%;
+}
+
+.qtyUi {
+  display : flex ;
+  /* flex-direction : column; */
+  justify-content : space-between;
+}

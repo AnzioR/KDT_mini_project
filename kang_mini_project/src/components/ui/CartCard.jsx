@@ -1,6 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useRecoilState } from "recoil";
 import { CartCountState } from "../state/CartCountState";
+import style from "./CartCard.module.css";
+import  Button  from 'react-bootstrap/Button';
+
+
+
+
 
 function CartCard ({cartData}) {
 
@@ -35,16 +41,24 @@ function CartCard ({cartData}) {
     
 
   return (
-    <div className="card">
+    <div className={style.cartcard}>
       <li key={cartData.id}>
-              <img src={cartData.thumbnail} alt='' />
-              <p>{cartData.name}</p>
-              <p>{cartData.price} 원</p>
-              <button onClick={handleQuantityDecre}>-</button>
-              <p>{cartData.quantity}</p>
-              <button onClick={handleQuantityIcre}>+</button>
-              <button onClick={handleDelete}>삭제</button>
-            </li>
+        <div>
+          <img src={cartData.thumbnail} alt='' />
+        </div>
+        <div className={style.cartInfo}>
+          <div>
+            <p>{cartData.name}</p>
+            <p>{cartData.price} 원</p>
+          </div>
+          <div className={style.qtyUi}>
+            <Button variant="dark" onClick={handleQuantityDecre}>-</Button>
+            <p>{cartData.quantity}</p>
+            <Button variant="dark" onClick={handleQuantityIcre}>+</Button>
+            <Button variant="outline-danger" onClick={handleDelete}>삭제</Button>
+          </div>
+        </div>
+      </li>
     </div>
   );
 }

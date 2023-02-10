@@ -143,5 +143,14 @@
       "password": "4567"
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "productId": 3,
+      "name": "허쉬 다크초콜릿 아사이&블루베리210g",
+      "thumbnail": "https://sitem.ssgcdn.com/90/11/54/item/1000270541190_i1_1100.jpg",
+      "price": 9080,
+      "quantity": 1,
+      "id": 3
+    }
+  ]
 }

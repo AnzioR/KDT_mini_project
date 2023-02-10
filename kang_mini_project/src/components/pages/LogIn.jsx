@@ -8,7 +8,7 @@ function LogIn () {
         <input type="text" placeholder="Email" />
       </div>
       <div>
-        <input type="text" placeholder="Password" />
+        <input type="password" placeholder="Password" />
       </div>
       <div>
       아이디, 비밀번호찾기
