@@ -4,6 +4,7 @@ import { CartCountState } from '../state/CartCountState';
 import { Link } from 'react-router-dom';
 import  Button  from 'react-bootstrap/Button';
 
+
 const ProductCard = ({product}) => {
 
   const [ cartCount, setCartCount ] = useRecoilState(CartCountState);
@@ -30,16 +31,18 @@ const ProductCard = ({product}) => {
   }
   return (
     <li key={product.id}>
-      <div>
-        <Link to={`/productdetail/${product.id}`} >
-          <img src={product.thumbnail} alt="" />
-        </Link>
-      </div>
-      <div>
-        {product.name}
-        {product.price} 원
-        <Button variant="outline-secondary" onClick={handleAddCart}>장바구니 담기</Button>
-      </div>
+        <div>
+          <Link to={`/productdetail/${product.id}`} >
+            <img src={product.thumbnail} alt="" />
+          </Link>
+        </div>
+        <div>
+          <p>{product.name}</p>
+          <p>{product.price} 원</p>
+          <p><Button variant="outline-warning" onClick={handleAddCart}>
+          장바구니 담기
+          </Button></p>
+        </div>
     </li>
   )
 }

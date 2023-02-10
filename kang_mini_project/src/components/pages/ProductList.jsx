@@ -4,6 +4,7 @@ import style from './ProductList.module.css';
 import ProductCard from '../ui/ProductCard';
 
 
+
 function ProductList () {
 
   const [productData, setProductData] = useState();
@@ -25,7 +26,6 @@ function ProductList () {
         {productData && productData.map( (product, idx) => (
           <ProductCard key={idx} product={product} />
         ))}
-        
       </ul>
     </div>
   );

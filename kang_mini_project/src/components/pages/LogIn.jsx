@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './LogIn.module.css';
+import Button from 'react-bootstrap/Button';
 
 function LogIn () {
   return (
@@ -14,7 +15,7 @@ function LogIn () {
       아이디, 비밀번호찾기
       </div>
       <div>
-        <button>로그인</button>
+      <Button variant="outline-secondary">로그인</Button>
       </div>
     </div>
   );

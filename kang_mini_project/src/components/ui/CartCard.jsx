@@ -38,6 +38,7 @@ function CartCard ({cartData}) {
     }).then(res => res.json())
   }
 
+
     
 
   return (
@@ -52,10 +53,14 @@ function CartCard ({cartData}) {
             <p>{cartData.price} 원</p>
           </div>
           <div className={style.qtyUi}>
-            <Button variant="dark" onClick={handleQuantityDecre}>-</Button>
-            <p>{cartData.quantity}</p>
-            <Button variant="dark" onClick={handleQuantityIcre}>+</Button>
-            <Button variant="outline-danger" onClick={handleDelete}>삭제</Button>
+            <p>
+              <Button variant="outline-dark" onClick={handleQuantityDecre}>-</Button>
+              {cartData.quantity}
+              <Button variant="outline-dark" onClick={handleQuantityIcre}>+</Button>
+            </p>
+            <p>
+              <Button variant="outline-danger" onClick={handleDelete}>삭제</Button>
+            </p>
           </div>
         </div>
       </li>

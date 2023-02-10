@@ -2,6 +2,7 @@ import React, { useEffect, useState }from 'react';
 import { useRecoilValue } from 'recoil';
 import { CartCountState } from '../state/CartCountState';
 import CartCard from '../ui/CartCard';
+import CartFooter from '../ui/CartFooter';
 
 function Cart () {
   const  [ cartDatas, setCartDatas ] = useState([]);
@@ -23,10 +24,10 @@ function Cart () {
         {
           cartDatas && cartDatas.map(cartData => (
             <CartCard key={cartData.id} cartData={cartData} />
-            
-          ))
+            ))
         }
       </ul>
+      <CartFooter />
     </div>
   );
 }

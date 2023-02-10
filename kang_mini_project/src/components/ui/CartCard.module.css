@@ -9,7 +9,7 @@
 
 .cartInfo {
   padding-left: 30px;
-  width : 300px
+  width : auto;
 }
 
 .cartcard img {
@@ -18,8 +18,7 @@
   border-radius : 10%;
 }
 
-.qtyUi {
-  display : flex ;
+.qtyUi > p {
   /* flex-direction : column; */
   justify-content : space-between;
 }

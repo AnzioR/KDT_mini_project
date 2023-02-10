@@ -1,11 +1,13 @@
 .main {
-  display: flex
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
 }
 
 .cartegory {
   padding : 10px 30px;
   border-right : 1px solid #000;
-  height : 1000px;
 }
 
 .list {
