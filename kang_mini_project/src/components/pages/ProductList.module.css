@@ -5,6 +5,8 @@
 .list ul {
   margin: 0px;
   padding: 0px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
 
 .list ul li {

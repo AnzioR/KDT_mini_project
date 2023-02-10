@@ -151,14 +151,6 @@
       "price": 5370,
       "quantity": 1,
       "id": 1
-    },
-    {
-      "productId": 2,
-      "name": "킷캣 오리지널 18입",
-      "thumbnail": "https://sitem.ssgcdn.com/21/16/61/item/1000529611621_i1_1100.jpg",
-      "price": 9980,
-      "quantity": 1,
-      "id": 2
     }
   ]
 }
