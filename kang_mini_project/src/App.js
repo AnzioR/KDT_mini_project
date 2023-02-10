@@ -7,6 +7,7 @@ import LogIn from './components/pages/LogIn';
 import Main from './components/pages/Main';
 import ProductDetail from './components/pages/ProductDetail';
 import { RecoilRoot } from 'recoil';
+import SignUp from './components/pages/SignUp';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/login" element={<LogIn />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/productdetail/:id" element={<ProductDetail />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
           <Footer />
         </BrowserRouter>
