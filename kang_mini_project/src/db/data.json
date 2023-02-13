@@ -145,12 +145,12 @@
   ],
   "carts": [
     {
-      "productId": 1,
-      "name": "롯데 빈츠 2입 리미티드기획 408g",
-      "thumbnail": "https://sitem.ssgcdn.com/59/56/18/item/1000530185659_i1_1100.jpg",
-      "price": 5370,
+      "productId": 3,
+      "name": "허쉬 다크초콜릿 아사이&블루베리210g",
+      "thumbnail": "https://sitem.ssgcdn.com/90/11/54/item/1000270541190_i1_1100.jpg",
+      "price": 9080,
       "quantity": 1,
-      "id": 1
+      "id": 2
     }
   ]
 }

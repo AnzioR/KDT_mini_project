@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { CartCountState } from "../state/CartCountState";
 import style from "./CartCard.module.css";

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import style from './ProductDetail.module.css';
+
 
 function  ProductDetail () {
   const { id } = useParams();
@@ -14,7 +16,7 @@ function  ProductDetail () {
   return (
     <div>
       { product && (
-        <div>
+        <div className={style.detailCard}>
           <img src={product.thumbnail} alt={product.description} />
           <h2>{product.name}</h2>
           <p>{product.description}</p>
