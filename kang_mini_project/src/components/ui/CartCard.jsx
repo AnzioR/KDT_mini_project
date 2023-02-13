@@ -1,19 +1,38 @@
-import React, { useState } from "react";
-import { useRecoilState } from "recoil";
-import { CartCountState } from "../state/CartCountState";
+import React, { useState, useEffect } from "react";
+
 import style from "./CartCard.module.css";
 import  Button  from 'react-bootstrap/Button';
 
-
-
-
+import { useRecoilState } from 'recoil';
+import { CartCountState } from '../state/CartCountState';
 
 function CartCard ({cartData}) {
 
-  const [cartQuantity, setCartQuantity] = useRecoilState(CartCountState)
+  const [ cartCount, setCartCount ] = useRecoilState(CartCountState);
+  const [cartDetailData, setCartDetailData] = useState(
+    {
+      id: cartData.id,
+      quantity: cartData.quantity,
+      price: 0,
+      thumbnail: '',
+      name: '',
+    }
+  );
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/products/${cartData.productId}`).then(res => res.json()).then(data => {
+      console.log(data)
+      setCartDetailData({
+        ...cartDetailData, 
+        thumbnail: data.thumbnail,
+        name: data.name,
+        price: data.price
+      })
+    })
+  },[cartData]);
 
   const handleQuantityPatch = (quantity) => {
-    fetch(`http://localhost:3001/carts/${cartData.id}` ,{
+    fetch(`http://localhost:3001/carts/${cartDetailData.id}` ,{
     method: "PATCH",
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({quantity: quantity})
@@ -22,40 +41,50 @@ function CartCard ({cartData}) {
 }
 
   const handleQuantityIcre = () => {
-    setCartQuantity(cartQuantity + 1)
-    handleQuantityPatch(cartQuantity + 1)
+    setCartDetailData({
+      ...cartDetailData,
+      quantity: cartDetailData.quantity + 1
+    })
+    handleQuantityPatch(cartDetailData.quantity + 1)
   }
 
   const handleQuantityDecre = () => {
-    setCartQuantity(cartQuantity - 1)
-    handleQuantityPatch(cartQuantity - 1)
+    setCartDetailData({
+      ...cartDetailData,
+      quantity: cartDetailData.quantity - 1
+    })
+    handleQuantityPatch(cartDetailData.quantity - 1)
   }
 
   const handleDelete = () => {
-    fetch(`http://localhost:3001/carts/${cartData.id}`, {
+    fetch(`http://localhost:3001/carts/${cartDetailData.id}`, {
       method: "DELETE",
       headers: {'Content-Type': 'application/json'}
-    }).then(res => res.json())
+    }).then(res => {
+      res.json()
+      if (res.ok) {
+        setCartCount(cartCount - 1);
+      }
+    })
+    .catch(err => console.log(err))
   }
 
 
-    
-
   return (
     <div className={style.cartcard}>
-      <li key={cartData.id}>
+      
         <div>
-          <img src={cartData.thumbnail} alt='' />
+          <img src={cartDetailData.thumbnail} alt='' />
         </div>
         <div className={style.cartInfo}>
           <div>
-            <p>{cartData.name}</p>
-            <p>{cartData.price} 원</p>
+            <p>{cartDetailData.name}</p>
+            <p>{cartDetailData.price} 원</p>
           </div>
           <div className={style.qtyUi}>
             <p>
               <Button variant="outline-dark" onClick={handleQuantityDecre}>-</Button>
-              {cartData.quantity}
+              {cartDetailData.quantity}
               <Button variant="outline-dark" onClick={handleQuantityIcre}>+</Button>
             </p>
             <p>
@@ -63,7 +92,7 @@ function CartCard ({cartData}) {
             </p>
           </div>
         </div>
-      </li>
+     
     </div>
   );
 }

@@ -9,6 +9,7 @@ import  Button  from 'react-bootstrap/Button';
 const ProductCard = ({product}) => {
 
   const [ cartCount, setCartCount ] = useRecoilState(CartCountState);
+  const userId = 1;
 
   const handleAddCart = () => {
     fetch('http://localhost:3001/carts', {
@@ -16,9 +17,7 @@ const ProductCard = ({product}) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         productId: product.id,
-        name: product.name,
-        thumbnail: product.thumbnail,
-        price: product.price,
+        userId: userId,
         quantity: 1
       })
     })
