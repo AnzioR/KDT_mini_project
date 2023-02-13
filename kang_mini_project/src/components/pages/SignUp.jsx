@@ -1,28 +1,64 @@
-import React from 'react';
+import React ,{ useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
+import { useNavigate } from 'react-router-dom';
+
 function SignUp() {
+
+  const navigate = useNavigate();
+  const [inpuData, setInputData] = useState({
+
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    isDuplicateCheck: false
+
+  });
   
   const handleChange = (event) => {
-    console.log(event.target.value)} ;
+    
+    const { name, value } = event.target;
+    setInputData({
+      ...inpuData,
+      [name]: value
+    })
+
+  };
 
   const handleAddAccount = (event) => {
+    event.preventDefault();
+
+    if(!inpuData.isDuplicateCheck) {
+      alert('이메일 중복체크를 해주세요.')
+      return;
+    }
+
+    if(inpuData.password === '' || inpuData.confirmPassword === '') {
+      alert('비밀번호를 입력해주세요.')
+      return;
+    } else if (inpuData.password !== inpuData.confirmPassword) {
+      alert('비밀번호가 서로 다릅니다.')
+      return;
+    }
+
     fetch('http://localhost:3001/users', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        name: event.target.name.value,
-        email: event.target.email.value,
-        password: event.target.password.value
+        name: inpuData.name,
+        email: inpuData.email,
+        password: inpuData.password
       })
     })
     .then(res => {
       res.json();
       if (res.ok) {
-        console.log(event)
+        console.log('success')
+        navigate('/login')
       }
     })
   }
@@ -30,13 +66,13 @@ function SignUp() {
 
 
   return ( 
-    <Form>
+    <Form onSubmit={handleAddAccount} className="mt-5">
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
         <Form.Label column sm={2}>
           Name
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="text" placeholder="Name" onChange={handleChange}/>
+          <Form.Control type="text" placeholder="Name" name="name" onChange={handleChange} required={true}/>
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
@@ -44,7 +80,7 @@ function SignUp() {
           Email
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="email" placeholder="Email" onChange={handleChange}/>
+          <Form.Control type="email" placeholder="Email" name="email" onChange={handleChange} required={true}/>
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
@@ -52,12 +88,20 @@ function SignUp() {
           Password
         </Form.Label>
         <Col sm={10}>
-          <Form.Control type="password" placeholder="Password" onChange={handleChange}/>
+          <Form.Control type="password" placeholder="Password" name="password" onChange={handleChange}/>
+        </Col>
+      </Form.Group>
+      <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
+        <Form.Label column sm={2}>
+          confirm password
+        </Form.Label>
+        <Col sm={10}>
+          <Form.Control type="password" placeholder="confirm password" name="confirmPassword" onChange={handleChange}/>
         </Col>
       </Form.Group>
       <Form.Group as={Row} className="mb-3">
         <Col sm={{ span: 10, offset: 2 }}>
-          <Button type="submit" onClick={handleAddAccount}>Sign in</Button>
+          <Button type="submit">Sign in</Button>
         </Col>
       </Form.Group>
     </Form>
