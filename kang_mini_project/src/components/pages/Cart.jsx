@@ -3,6 +3,8 @@ import { useRecoilValue } from 'recoil';
 import { CartCountState } from '../state/CartCountState';
 import CartCard from '../ui/CartCard';
 import CartFooter from '../ui/CartFooter';
+import style from './Cart.module.css';
+
 
 function Cart () {
   const  [ cartDatas, setCartDatas ] = useState([]);
@@ -19,7 +21,7 @@ function Cart () {
     
 
   return (
-    <div>
+    <div className={style.cart}>
       <ul>
         {
           cartDatas && cartDatas.map(cartData => (

@@ -8,6 +8,7 @@ import Main from './components/pages/Main';
 import ProductDetail from './components/pages/ProductDetail';
 import { RecoilRoot } from 'recoil';
 import SignUp from './components/pages/SignUp';
+import ProductList from './components/pages/ProductList';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/login" element={<LogIn />} />
+            <Route path="/productlist" element={<ProductList />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/productdetail/:id" element={<ProductDetail />} />
             <Route path="/signup" element={<SignUp />} />

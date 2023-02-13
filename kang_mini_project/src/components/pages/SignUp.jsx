@@ -14,8 +14,7 @@ function SignUp() {
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
-    isDuplicateCheck: false
+    confirmPassword: ''
 
   });
   
@@ -31,12 +30,6 @@ function SignUp() {
 
   const handleAddAccount = (event) => {
     event.preventDefault();
-
-    if(!inpuData.isDuplicateCheck) {
-      alert('이메일 중복체크를 해주세요.')
-      return;
-    }
-
     if(inpuData.password === '' || inpuData.confirmPassword === '') {
       alert('비밀번호를 입력해주세요.')
       return;

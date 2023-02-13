@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import style from './ProductList.module.css';
 import ProductCard from '../ui/ProductCard';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -21,12 +22,17 @@ function ProductList () {
 
   
   return (
-    <div className={style.list}>
-      <ul>
-        {productData && productData.map( (product, idx) => (
-          <ProductCard key={idx} product={product} />
-        ))}
-      </ul>
+    <div className={style.pl}>
+      {/* <div className={style.cartegory}>
+        <Button variant="outline-dark">전체상품보기</Button>
+      </div> */}
+      <div className={style.list}>
+        <ul>
+          {productData && productData.map( (product, idx) => (
+            <ProductCard key={idx} product={product} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

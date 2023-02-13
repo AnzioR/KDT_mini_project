@@ -143,84 +143,36 @@
       "password": "4567"
     },
     {
-      "name": "jason",
-      "email": "beat1103@gmail.com",
+      "name": "kang",
+      "email": "kang@naver.com",
       "password": "1234",
       "id": 3
-    },
-    {
-      "name": "develop",
-      "email": "jason@jason.com",
-      "password": "1234",
-      "id": 4
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 5
-    },
-    {
-      "name": "aaa",
-      "email": "aaaa@naver.com",
-      "password": "",
-      "id": 6
-    },
-    {
-      "name": "aaa",
-      "email": "jason@jason.com",
-      "password": "aaa",
-      "id": 7
     }
   ],
   "carts": [
     {
-      "productId": 3,
-      "quantity": 1,
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "productId": 8,
-      "userId": 1,
-      "quantity": 2,
-      "id": 4
-    },
-    {
-      "productId": 6,
+      "productId": 2,
       "userId": 1,
       "quantity": 1,
-      "id": 5
-    },
-    {
-      "productId": 5,
-      "userId": 1,
-      "quantity": 1,
-      "id": 6
-    },
-    {
-      "productId": 9,
-      "userId": 1,
-      "quantity": 1,
-      "id": 7
-    },
-    {
-      "productId": 10,
-      "userId": 1,
-      "quantity": 1,
-      "id": 8
-    },
-    {
-      "productId": 4,
-      "userId": 1,
-      "quantity": 4,
-      "id": 10
+      "id": 1
     },
     {
       "productId": 2,
       "userId": 1,
       "quantity": 1,
-      "id": 11
+      "id": 2
+    },
+    {
+      "productId": 3,
+      "userId": 1,
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "productId": 4,
+      "userId": 1,
+      "quantity": 1,
+      "id": 4
     }
   ]
 }

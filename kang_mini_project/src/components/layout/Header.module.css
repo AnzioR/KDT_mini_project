@@ -1,10 +1,27 @@
 .header {
-  width: 100%;
-  padding: 30px 100px;
+  width: auto;
+  margin: 0px 100px;
+  padding: 50px 0px;
   border-bottom: 1px solid black;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+
+.headerNav {
+  display: flex;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+
+.headerNav p{
+  margin: 0px 30px;
+}
+
+.headerNav a {
+  text-decoration: none;
+  color: black;
 }
 
 .headerIcon {
@@ -12,5 +29,5 @@
 }
 
 .headerIcon img {
-  padding-left: 25px;
+  padding: 10px;
 }

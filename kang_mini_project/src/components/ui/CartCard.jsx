@@ -29,7 +29,7 @@ function CartCard ({cartData}) {
         price: data.price
       })
     })
-  },[cartData]);
+  },[cartDetailData]);
 
   const handleQuantityPatch = (quantity) => {
     fetch(`http://localhost:3001/carts/${cartDetailData.id}` ,{
@@ -92,7 +92,7 @@ function CartCard ({cartData}) {
             </p>
           </div>
         </div>
-     
+    
     </div>
   );
 }

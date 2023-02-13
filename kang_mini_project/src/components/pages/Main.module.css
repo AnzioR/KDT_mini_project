@@ -1,16 +1,10 @@
 .main {
-  display: flex;
-  padding: 0px;
-  margin: 0px;
+  margin: 0px 100px 25px 100px;
+}
+
+.main img {
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  margin-bottom: 30px;
   width: 100%;
 }
-
-.cartegory {
-  padding : 10px 30px;
-  border-right : 1px solid #000;
-}
-
-/* .list {
-  display : grid;
-  flex-direction : column;
-} */
