@@ -8,17 +8,17 @@ import { Link } from 'react-router-dom';
 function LogIn () {
   return (
     <div className={style.login}>
-      <div>
+      <div className={style.inputBox}>
         <FloatingLabel
           controlId="floatingInput"
-          label="Email address"
+          label="이메일"
           className={style.floatingLabel}
         >
           <Form.Control type="email" placeholder="name@example.com" />
         </FloatingLabel>
         <FloatingLabel 
           controlId="floatingPassword" 
-          label="Password"
+          label="비밀번호"
           className={style.floatingLabel}
         >
           <Form.Control type="password" placeholder="Password" />

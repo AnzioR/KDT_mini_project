@@ -1,3 +1,14 @@
+# Node version = 16.18.0
+
+# Library
+react-router-dom
+bootstrap
+recoil
+swiper
+
+# json server location
+./src/db/data.json
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

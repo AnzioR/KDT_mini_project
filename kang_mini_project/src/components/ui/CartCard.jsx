@@ -29,7 +29,7 @@ function CartCard ({cartData}) {
         price: data.price
       })
     })
-  },[cartDetailData]);
+  },[]);
 
   const handleQuantityPatch = (quantity) => {
     fetch(`http://localhost:3001/carts/${cartDetailData.id}` ,{

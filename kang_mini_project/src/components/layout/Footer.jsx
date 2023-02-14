@@ -9,14 +9,14 @@ function Footer () {
       <div>
         <div className={style.footerNav}>
         </div>
-        <div>
+        <div className={style.companyInfo}>
           <p>(주) 이마트24</p>
           <p>대표이사:김장욱 / 사업자등록번호: 123-45-67890</p>
           <p>서울특별시 성동구 성수동 2가 281-4 푸조비즈타워 / 고객센터: 02-6916-1500 / Fax: 02-6919-1430</p>
           <p>COPYRIGHT (C) EMART24.ALL RIGHT RESERVED</p>
         </div>
       </div>
-      <div>
+      <div className={style.familySns}>
         <div>
         <Dropdown>
           <Dropdown.Toggle variant="outline-dark" id="dropdown-basic">

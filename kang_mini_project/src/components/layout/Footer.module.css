@@ -1,6 +1,17 @@
 .container {
   background-color: #f4f4f4;
   border-top: 1px solid black;
-  padding: 50px 100px 50px 100px;
+  padding: 50px;
   margin: 0px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.companyInfo {
+  font-size: 14px;
+  text-align: start;
+}
+
+.familySns {
+  border-radius: 10%;
 }
